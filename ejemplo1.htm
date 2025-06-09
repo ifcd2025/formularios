@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo1</title>
+</head>
+<body>
+    <form action="">
+        <label for="nombre">nombre:</label> <!-- en for se pone el id-->
+        <input type="text" name="nombre" id="nombre" required placeholder="Escribe tu nombre">
+        <label>Apellidos:<input type="text" name="Apellidos" id="Apellidos"></label>
+        <label for="ciudad">ciudad:</label>
+        <input type="text" name="ciudad" id="ciudad" value="vigo">
+        <label for="observaciones">observaciones:</label>
+        <textarea name="observaciones" id="observaciones" cols="60" rows="6">Texto inicial</textarea>
+        <label for="dni">dni</label>
+        <input type="text" name="dni" id="dni" minlength="9" maxlength="9">
+        <label for="edad">edad</label>
+        <input type="number" name="edad" id="edad" min="18">
+        <label for="email">email</label>
+        <input type="email" name="email" id="email" required>
+        <fieldset>
+            <legend>Idiomas</legend>
+            <input type="checkbox" name="castellano" id="castellano">
+            <label for="castellano">Castellano</label>
+            <input type="checkbox" name="gallego" id="gallego">
+            <label for="gallego">Gallego</label>
+            <input type="checkbox" name="ingles" id="ingles">
+            <label for="ingles">Inglés</label>
+        </fieldset>
+        <!-- Si se marca una casilla se envía el valor on; con value podemos
+         enviar otra cosa.
+         Con checked aparece marcado por defecto -->
+        <input type="checkbox" name="acepta" id="acepta" value="si" checked>
+        <label for="acepta">Aceptas las condiciones</label>
+        <fieldset>
+            <legend>Estado civil</legend>
+            <!-- Deben tener el mismo name para que solo se pueda marcar uno.
+             El value es básicamente obligatorio ponerlo -->
+            <input type="radio" name="estadoCivil" id="soltero" value="s">
+            <label for="soltero">soltero</label>
+            <input type="radio" name="estadoCivil" id="casado" value="c">
+            <label for="casado">casado</label>
+            <input type="radio" name="estadoCivil" id="viudo" value="v">
+            <label for="viudo">viudo</label>
+        </fieldset>
+        <label for="provincia">Provincia</label>
+        <select name="provincia" id="provincia">
+            <option>Pontevedra</option>
+            <option>A Coruña</option>
+            <!-- Por defecto se envía el texto del option. Si quieremos
+             enviar otra cosa le damos un value-->
+            <option value="orense">Ourense</option>
+        </select>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="vaciar">
+    </form>
+</body>
+</html>
