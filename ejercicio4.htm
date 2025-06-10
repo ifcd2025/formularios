@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <style>
+        #formulario1 > * { /* con > solo afecta a los hijos directos,
+                con lo que no lo aplica a los radios y sus labels */
+            display: block;
+            margin-bottom: .7em;
+        }
+      
+    </style>
+</head>
+
+<body>
+    <h1>feedback</h1>
+    <form action="" id="formulario1">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+        <label for="comentarios">Comentarios:</label>
+        <textarea name="comentarios" id="comentarios"></textarea>
+        <fieldset>
+            <legend>¿Recomendarás nuestros servicios?</legend>
+            <input type="radio" name="recomendacion" id="si">
+            <label for="si">Sí</label>
+            <input type="radio" name="recomendacion" id="no">
+            <label for="no">No</label>
+        </fieldset>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>

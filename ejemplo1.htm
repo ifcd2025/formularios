@@ -6,7 +6,7 @@
     <title>Ejemplo1</title>
 </head>
 <body>
-    <form action="">
+    <form action="" method="get" enctype="application/x-www-form-urlencoded">
         <label for="nombre">nombre:</label> <!-- en for se pone el id-->
         <input type="text" name="nombre" id="nombre" required placeholder="Escribe tu nombre">
         <label>Apellidos:<input type="text" name="Apellidos" id="Apellidos"></label>
@@ -47,15 +47,78 @@
         </fieldset>
         <label for="provincia">Provincia</label>
         <select name="provincia" id="provincia">
+            <option>Selecciona la provincia</option>
             <option>Pontevedra</option>
             <option>A Coruña</option>
             <!-- Por defecto se envía el texto del option. Si quieremos
              enviar otra cosa le damos un value-->
             <option value="orense">Ourense</option>
         </select>
+        <label for="pais">País</label>
+        <select name="pais" id="pais" size="5">
+            <option value="1">Italia</option>
+            <option value="2" selected>España</option>
+            <option value="3">Francia</option>
+        </select>
+        <label for="clave">clave</label>
+        <input type="password" name="clave" id="clave">
+        <input type="button" value="púlsame">
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color">
+        <label for="fecha">fecha</label>
+        <input type="date" name="fecha" id="fecha">
+        <label for="cantidad">cantidad</label>
+        <input type="range" name="cantidad" id="cantidad" min="1" max="10">
+        <label for="telefono">teléfono</label>
+        <input type="tel" name="telefono" id="telefono">
+        <label for="buscar">buscar</label>
+        <input type="search" name="buscar" id="buscar">
+        <label for="foto">Foto</label>
+        <input type="file" name="foto" id="foto">
 
         <input type="submit" value="Enviar">
         <input type="reset" value="vaciar">
     </form>
+
+    <ul contenteditable>
+        <li>alumno 1</li>
+        <li>alumno 2</li>
+        <li>alumno 3</li>
+        <li>alumno 4</li>
+    </ul>
+    <p contenteditable>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, modi!</p>
+
+    <input type="text" list="ciudades">  
+<!-- No tienen por qué ir en un formulario y puede haber etiquetas entre ellas --> 
+<datalist id="ciudades"> 
+<option label="Vigo" value="Vigo"></option> 
+<option label="Baiona" value="Bayona"></option> 
+<option label="Cangas" value="Cangas"></option>  
+</datalist> 
+
+<!-- Se muestran los colores indicados, aunque el usuario puede elegir otro --> 
+<input type="color" value="#000000" list="colores" /> 
+<datalist id="colores"> 
+<option>#ff0000</option> 
+<option>#0000ff</option> 
+<option>#00ff00</option> 
+<option>#ffffff</option> 
+<option>#000000</option> 
+</datalist> 
+<input type="date" list="dias" /> 
+<datalist id="dias"> 
+<option label="Año nuevo">2025-01-01</option> 
+<option label="Martes de Carnaval">2025-03-04</option> 
+<option label="Fiesta del Trabajo">2025-05-01</option> 
+</datalist> 
+
+!-- Se muestran unas marcas en la barra con los valores, aunque el usuario puede elegir otros --> 
+<input type="range" value="0" min="0" max="100" list="descuentos" /> 
+<datalist id="descuentos"> 
+<option>10</option> 
+<option>20</option> 
+<option>40</option> 
+<option>70</option> 
+</datalist> 
 </body>
 </html>
