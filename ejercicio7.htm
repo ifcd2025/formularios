@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio7</title>
+    <style>
+        /* Para quitar de la página elementos que no queremos, pero que si
+        se leerán con lectores de pantalla */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            border: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+        }
+        [type="email"], [type="password"], [type="submit"] {
+            display: block;
+        }
+        body {
+            background-color: rgb(2, 102, 160);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form {
+            background: linear-gradient(45deg, rgb(3, 139, 207) 0%,
+                rgb(8, 175, 235) 100%);
+            box-shadow: 0 0 20px rgb(101, 101, 101);
+            color: white;
+            padding-bottom: 1em;
+            width: fit-content;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h1 {
+                font-size: 1.2em;
+                text-align: center;
+                background-color: rgb(43, 167, 239);
+                padding: .6em 0;
+            }
+            div {
+                margin: 1em;
+            }
+            [type="submit"] {
+                width: 100%;
+                color: white;
+                text-align: center;
+                padding: .5em;
+                background: linear-gradient(45deg, rgb(3, 139, 207) 0%,
+                rgb(8, 175, 235) 100%);
+                font-size: 1.2em;
+                border-radius: 5px;
+                box-shadow: 2px 2px 2px rgba(96,96,96, 0.5),
+                    -1px -1px 2px rgba(243,242,242,0.5);
+                border: none;
+                margin-top: 1em;
+            }
+            .cuadro {
+                padding: .5em 1em;
+                border:none;
+                /* con el & hacemos que se aplique al mismo cuadro y no a un hijo
+                de cuadro. Si no anidamos, pondríamos .cuadro::placeholder { */
+                &::placeholder {
+                    color: rgb(52, 53, 53)
+                }
+            }
+            #email {
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                border-bottom: 1px solid grey;
+            }
+            #contrasenha {
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+                margin-bottom: 1em;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <h1>Login</h1>
+        <div>
+            <label for="email" class="sr-only">email</label>
+            <input type="email" name="email" id="email" placeholder="email" class="cuadro">
+            <label for="contrasenha" class="sr-only">contraseña</label>
+            <input type="password" name="contrasenha" id="contrasenha" placeholder="contraseña" class="cuadro">
+            <input type="checkbox" name="recordarme" id="recordarme">
+            <label for="recordarme">Recordarme</label>
+            <input type="submit" value="Entrar">
+        </div>
+    </form>
+
+</body>
+
+</html>
