@@ -22,11 +22,13 @@
         }
         form {
             display: grid;
-            grid-template-columns: min-content min-content; 
+            grid-template-columns: min-content min-content min-content; 
             gap:1em;
+            width: fit-content;
+            margin: auto;
             background-color: white;
             border-radius: 5px;
-            box-shadow: 0 0 4px rgb(202, 202, 202);
+            box-shadow: 0 0 8px rgb(202, 202, 202);
             padding: 1em;
             label {
                 font-weight: bold;
@@ -34,6 +36,32 @@
             [type="text"], [type="password"], [type="email"], [type="number"] {
                 border:1px solid rgb(176, 177, 177);
                 border-radius: 3px;
+                padding: .5em;
+            }
+            #edad {
+                width: 3em;
+            }
+            [type="submit"] {
+                grid-column: 1 / 4; /* 1 / span 3; */
+                background-color: rgb(61, 160, 61);
+                color: white;
+                text-align: center;
+                padding: .4em 0;
+                border: none;
+                border-radius: 5px;
+            }
+            label::after {
+                content:":";
+            }
+            select {
+                padding: .5em;
+            }
+            :user-invalid, :user-invalid + span {
+                color: red;
+                visibility: visible;
+            }
+            span {
+                visibility: hidden;
             }
         }
 
@@ -45,23 +73,30 @@
         <h1>Registro de usuario</h1>
         <form action="">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre">
+            <input type="text" id="nombre" name="nombre" required minlength="2">
+            <span>*</span>
             <label for="apellidos">Apellidos</label>
             <input type="text" id="apellidos" name="apellidos">
+            <span></span> <!-- solución cutre-->
             <label for="edad">Edad</label>
-            <input type="number" id="edad" name="edad">
+            <input type="number" id="edad" name="edad" min="1">
+            <span>*</span>
             <label for="sexo">Sexo</label>
             <select name="sexo" id="sexo">
                 <option>Seleccionar</option>
                 <option value="h">Hombre</option>
                 <option value="m">Mujer</option>
             </select>
+            <span></span>
             <label for="email">Correo eléctronico</label>
             <input type="email" id="email" name="email">
+            <span>*</span>
             <label for="contrasenha">Contraseña</label>
             <input type="password" id="contrasenha" name="contrasenha">
-            <label for="contrasenhaRep">Repetir contraseña</label>
+            <span></span>
+            <label for="contrasenhaRep">Confirmar contraseña</label>
             <input type="password" id="contrasenhaRep" name="contrasenhaRep">
+            <span></span>
             <input type="submit" value="Registrarse">
         </form>
     </main>
