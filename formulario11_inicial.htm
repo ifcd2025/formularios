@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>formulario 11</title>
+    <style>
+         /* fuente Open Sans de Google Fonts.
+        Los controles requiridos en otro color de fondo (:required)
+        El textarea solo debe poder crecer verticalmente (resize: vertical) por parte del usuario
+        Los elementos de solo lectura deben estar en un color gris oscuro (:read-only)
+         */
+      
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h1>Nuevo registro</h1>
+      <div class="contenido">
+        <label for="artista">Artista</label>
+        <input type="text" name="artista" id="artista" class="cajaTexto" required/>
+        <label for="cancion">Canción</label>
+        <input type="text" name="cancion" id="cancion" class="cajaTexto" required/>
+        <label for="album">Álbum</label>
+        <input type="text" name="album" id="album" class="cajaTexto" />
+        <label for="genero">Género</label>
+        <input type="text" name="genero" id="genero" class="cajaTexto" />
+        <label for="notas">Género</label>
+        <textarea name="notas" id="notas" class="cajaTexto" rows="4" readonly>Asegúrese de introducir los datos correctamente para evitar problemas posteriores</textarea>
+      <input type="submit" value="guardar" name="guardar" id="guardar" />
+      </div>
+    </form>
+  </body>
+</html>
