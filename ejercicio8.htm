@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio8</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.css"  crossorigin="anonymous">
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            border: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+        }
+
+        body {
+            background-color: rgb(206, 206, 206);
+        }
+
+        form {
+            background-color: white;
+            width: min-content;
+            margin: 2em auto;
+            padding: 2em;
+            font-family: Arial, Helvetica, sans-serif;
+
+            p {
+                font-weight: bold;
+                color: orange;
+                font-size: 1.1em;
+            }
+            p:first-of-type {
+                margin-bottom: 1em;
+            }
+            p:last-of-type {
+                margin-top: 1em;
+            }
+            .caja {
+                background-color: rgb(231, 231, 231);
+                border: 1px solid rgb(179, 179, 179);
+                padding: .5em;
+                /* entre el i y el input queda un pequeño espacio debido
+                a que i es un elemento en línea y tenemos un enter después del i
+                en el HTML. Para quitarlo una opción rápida sería quitar ese
+                Enter. Otra opción es convertir el i en bloque y luego usar
+                display:flex en el div contenedor para que sigan en la misma línea.
+                Además con flex conseguimos que el i y el input tengan el mismo
+                alto */
+                display: block;
+            }
+            .caja:focus{
+                border-color: orange;
+                outline: none;
+            }
+            div {
+                margin-bottom: 1.2em;
+                display: flex;
+                flex-wrap: nowrap; /* Para que mantenga el i y el input en la misma línea */
+            }
+            [type="submit"] {
+                background-color: orange;
+                color:white;
+                padding: .5em;
+                display: block;
+                margin-top: 1em;
+                /* Para ponerlo a la derecha */
+                margin-right: 0;
+                margin-left: auto;
+            }
+            [type="radio"] {
+                display: none; /* Para ocultar los radios y que no ocupen espacio*/
+            }
+            .botonRadio {
+                background-color: rgb(231, 231, 231);
+                border: 1px solid rgb(179, 179, 179);
+                padding: .5em;
+                width: 40%;
+                display: inline-block; /* Para que funcione el width */
+                text-align: center;
+                text-transform: capitalize;
+                color:rgb(119, 119, 119);
+            }
+            [type="radio"]:checked + label {
+                background-color: orange;
+                color: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <p>Cuenta</p>
+        <div>
+            <label for="usuario" class="sr-only">usuario</label>
+            <i class="fa-solid fa-user caja"></i>
+            <input type="text" name="usuario" id="usuario" placeholder="Usuario" class="caja">
+        </div>
+        <div>
+            <label for="email" class="sr-only">email</label>
+            <i class="fa-solid fa-envelope caja"></i>
+            <input type="email" name="email" id="email" placeholder="Email" class="caja">
+        </div>
+        <div>
+            <label for="contrasenha" class="sr-only">contraseña</label>
+            <i class="fa-solid fa-lock caja"></i>
+            <input type="password" name="contrasenha" id="contrasenha" placeholder="Contraseña" class="caja">
+        </div>
+        <p>Género</p>
+        <input type="radio" name="genero" id="hombre" value="h">
+        <label for="hombre" class="botonRadio botonHombre">hombre</label>
+        <input type="radio" name="genero" id="mujer" value="m">
+        <label for="mujer" class="botonRadio botonMujer">mujer</label>
+        <p>Términos y condiciones</p>
+        <input type="checkbox" name="condiciones" id="condiciones">
+        <label for="condiciones">Acepto los términos y condiciones para registrarme en este servicio, y por la presente
+            confirmo que he leído la política de privacidad.</label>
+        <input type="submit" value="enviar">
+
+    </form>
+
+</body>
+
+</html>
