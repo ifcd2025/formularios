@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario10</title>
+    <style>
+      /* fuente Open Sans de Google Fonts.
+      Al pasar el ratón por los botones deben cambiar su color ligeramente.
+      Al pinchar en cada cuadro, cabiar el color de su placeholder a rojo (:focus::placeholder)
+      Usar clase sr-only para los label.
+      Los botones deben cambair el cursor a una mano (cursor:pointer) */ 
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div class="datos">
+        <h1>login</h1>
+        <label for="email" class="sr_only">email</label>
+        <input type="email" name="email" id="email" placeholder="email" class="cuadroTexto" />
+        <label for="contrasenha" class="sr_only">contraseña</label>
+        <input
+          type="password"
+          name="contrasenha"
+          id="contrasenha"
+          placeholder="contraseña" class="cuadroTexto"
+        />
+        <a href="">¿Te has olvidado la contraseña?</a>
+      </div>
+      <div class="botones">
+        <input
+          type="button"
+          value="registrarse"
+          name="registrarse"
+          id="registrarse"
+          class="boton"
+        />
+        <input type="button" value="iniciar" name="iniciar" id="iniciar" class="boton"/>
+      </div>
+    </form>
+  </body>
+</html>
