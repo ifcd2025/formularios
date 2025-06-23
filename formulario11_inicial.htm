@@ -1,34 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>formulario 11</title>
-    <style>
-         /* fuente Open Sans de Google Fonts.
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>formulario 11</title>
+  <style>
+    /* fuente Open Sans de Google Fonts.
         Los controles requiridos en otro color de fondo (:required)
         El textarea solo debe poder crecer verticalmente (resize: vertical) por parte del usuario
         Los elementos de solo lectura deben estar en un color gris oscuro (:read-only)
          */
-      
-    </style>
-  </head>
-  <body>
-    <form action="">
-      <h1>Nuevo registro</h1>
-      <div class="contenido">
-        <label for="artista">Artista</label>
-        <input type="text" name="artista" id="artista" class="cajaTexto" required/>
-        <label for="cancion">Canción</label>
-        <input type="text" name="cancion" id="cancion" class="cajaTexto" required/>
-        <label for="album">Álbum</label>
-        <input type="text" name="album" id="album" class="cajaTexto" />
-        <label for="genero">Género</label>
-        <input type="text" name="genero" id="genero" class="cajaTexto" />
-        <label for="notas">Género</label>
-        <textarea name="notas" id="notas" class="cajaTexto" rows="4" readonly>Asegúrese de introducir los datos correctamente para evitar problemas posteriores</textarea>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: 100%;
+    }
+
+    body {
+      font-family: "Open Sans", sans-serif;
+    }
+
+    form label,
+    form input[type="submit"] {
+      display: block;
+    }
+
+    form label {
+      background-color: rgb(55, 54, 64);
+      color: darkgrey;
+      padding: .4em 1em;
+      width: fit-content;
+      margin-top: 10px;
+      /* En mi caso el Edge deja un pequeño hueco entre el label y el 
+          input. Con esto lo quitamos aunque en el Firefox quedará 1px más abajo el label*/
+      position: relative;
+      top: 1px;
+    }
+
+    form input[type="text"], form textarea {
+      margin-left: 10px;
+      width: calc(100% - 10px);
+    }
+
+    form input[type="text"]:required {
+      background-color: bisque;
+    }
+
+    form textarea {
+      resize: vertical;
+    }
+    form textarea:read-only {
+      color: grey;
+    }
+    .contenido {
+      padding: 1em;
+    }
+    form {
+      background-color: rgb(203, 203, 203);
+      width: fit-content;
+    }
+    form h1 {
+      text-align: center;
+      font-size: 2em;
+      font-weight: normal;
+      background-color: rgb(55, 54, 64);
+      color: darkgrey;
+      padding: .5em;
+    }
+    form input[type="submit"] {
+      width: 100%;
+      padding: .5em;
+      color: white;
+      background-color: cadetblue;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="">
+    <h1>Nuevo registro</h1>
+    <div class="contenido">
+      <label for="artista">Artista</label>
+      <input type="text" name="artista" id="artista" class="cajaTexto" required />
+      <label for="cancion">Canción</label>
+      <input type="text" name="cancion" id="cancion" class="cajaTexto" required />
+      <label for="album">Álbum</label>
+      <input type="text" name="album" id="album" class="cajaTexto" />
+      <label for="genero">Género</label>
+      <input type="text" name="genero" id="genero" class="cajaTexto" />
+      <label for="notas">Género</label>
+      <textarea name="notas" id="notas" class="cajaTexto" rows="4" cols="40"
+        readonly>Asegúrese de introducir los datos correctamente para evitar problemas posteriores</textarea>
       <input type="submit" value="guardar" name="guardar" id="guardar" />
-      </div>
-    </form>
-  </body>
+    </div>
+  </form>
+</body>
+
 </html>
